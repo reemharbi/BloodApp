@@ -1,0 +1,42 @@
+<%= form_with(model: @post, local: true) do |form| %>
+ 
+  <div class="field">
+    <%= form.label :fileNumber %>
+    <%= form.text_field :fileNumber %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bloodType %>
+    <%= form.text_field :bloodType %>
+  </div>
+
+  <div class="field">
+    <%= form.label :patientName %>
+    <%= form.text_field :patientName %>
+  </div>
+
+<div class="field">
+    <%= form.label :bloodUnits %>
+    <%= form.text_field :bloodUnits %>
+  </div>
+
+<div class="field">
+    <%= form.label :duration %>
+    <%= form.text_field :duration %>
+  </div>
+
+
+<%if user_signed_in?%>
+
+<%= form.hidden_field :user_id, :value => current_user.id%>
+
+<%elsif hospital_signed_in?%>
+
+<%= form.hidden_field :hospital_id, :value => current_hospital.id%>
+
+<%end%>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
