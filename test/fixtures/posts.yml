@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fileNumber: MyString
+  bloodType: MyString
+  patientName: MyString
+  bloodUnits: 1.5
+  duration: 1
+  user_id: 1
+  hospital_id: 1
+
+two:
+  fileNumber: MyString
+  bloodType: MyString
+  patientName: MyString
+  bloodUnits: 1.5
+  duration: 1
+  user_id: 1
+  hospital_id: 1
