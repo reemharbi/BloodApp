@@ -1,2 +1,10 @@
-<h1>Whatareyou#login</h1>
-<p>Find me in app/views/whatareyou/login.html.erb</p>
+<div class="card text-center" style="width: 18rem;">
+  <div class="card-body">
+    <%= button_to "Log in as Hospital", new_hospital_session_path, :method => "get" %>
+  </div>
+</div>
+<div class="card text-center" style="width: 18rem;">
+  <div class="card-body">
+    <%= button_to "Log in as Individual", new_user_session_path, :method => "get" %>
+  </div>
+</div>
