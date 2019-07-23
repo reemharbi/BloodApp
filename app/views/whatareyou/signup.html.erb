@@ -1,11 +1,12 @@
   <div class="card text-center" style="width: 18rem;">
   <div class="card-body">
-    <%= button_to "Sign up as Hospital", new_hospital_registration_path, :method => "get", :class => "btn btn-outline-success" %>
+    <%= button_to "Sign up as Hospital", new_hospital_registration_path , params: { user_type: "hosp" }, :method => "get", :class => "btn btn-outline-success hosps" %>
   </div>
 </div>
 
 <div class="card text-center" style="width: 18rem;">
   <div class="card-body">
-    <%= button_to "Sign up as Individual", new_user_registration_path, :method => "get", :class => "btn btn-outline-info" %>
+    <%= button_to "Sign up as Individual", new_user_registration_path, params: { user_type: "usr" }, :method => "get", :class => "btn btn-outline-info usrs" %>
   </div>
 </div>
+
