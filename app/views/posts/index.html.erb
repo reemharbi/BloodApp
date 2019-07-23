@@ -1,47 +1,25 @@
-<p id="notice"><%= notice %></p>
-
-
-
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Hospital Name</th>
-      <th scope="col">City</th>
-      <th scope="col">Patient File Number</th>
-      <th scope="col">Blood Type</th>
-      <th scope="col">Patient Name</th>
-      <th scope="col">Blood Units Needed</th>
-      <th scope="col">Duration (days)</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td>Hospital Name</td>
-        <td>City</td>
-        <td><%= post.fileNumber %></td>
-        <td><%= post.bloodType %></td>
-        <td><%= post.patientName %></td>
-        <td><%= post.bloodUnits %></td>
-        <td><%= post.duration %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-         <td><%= link_to 'Delete', "/posts/#{post.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%if user_signed_in? || hospital_signed_in?%>
-
-<%= link_to 'New Post', new_post_path %>
-
+<%if hospital_signed_in?%>
+<div class="text-center">
+<h1><%= link_to 'New Post', new_post_path %></h1>
+</div>
 <%end%>
+
+
+<% @posts.each do |post| %>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h1 class="card-title"><%= post.bloodType %></h1>
+    <h6 class="card-subtitle mb-2 text-muted"> <%= Hospital.find(post.hospital_id).name%>, <%= Hospital.find(post.hospital_id).city%></h6>
+    <p class="card-text">File Number: <%= post.fileNumber %> </p>
+    <p class="card-text">Patient Name: <%= post.patientName %> </p>
+    <p class="card-text">Blood Units: <%= post.bloodUnits %> </p>
+    <p class="card-text">Post Duration: <%= post.duration %> </p>
+    <%= link_to 'Show', post, class: 'card-link' %>
+    <%= link_to 'Delete', "/posts/#{post.id}", method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link' %>
+  </div>
+</div>
+      <% end %>
+
+
 
