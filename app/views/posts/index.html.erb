@@ -1,28 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
 
-<table>
+
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Patient File Number</th>
-      <th>Blood Type</th>
-      <th>Patient Name</th>
-      <th>Blood Units Needed</th>
-      <th colspan="3"></th>
+      <th scope="col">Hospital Name</th>
+      <th scope="col">City</th>
+      <th scope="col">Patient File Number</th>
+      <th scope="col">Blood Type</th>
+      <th scope="col">Patient Name</th>
+      <th scope="col">Blood Units Needed</th>
+      <th scope="col">Duration (days)</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @posts.each do |post| %>
       <tr>
+        <td>Hospital Name</td>
+        <td>City</td>
         <td><%= post.fileNumber %></td>
         <td><%= post.bloodType %></td>
         <td><%= post.patientName %></td>
         <td><%= post.bloodUnits %></td>
+        <td><%= post.duration %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <td><%= link_to 'Delete', "/posts/#{post.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +39,9 @@
 
 <br>
 
+<%if user_signed_in? || hospital_signed_in?%>
+
 <%= link_to 'New Post', new_post_path %>
+
+<%end%>
+

@@ -1,29 +1,41 @@
 <%= form_with(model: @post, local: true) do |form| %>
- 
-  <div class="field">
-    <%= form.label :fileNumber %>
+ <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">  <div class="field">
+    <%= form.label "File Number" %>
     <%= form.text_field :fileNumber %>
   </div>
-
-  <div class="field">
-    <%= form.label :bloodType %>
+</th>
+      <th scope="col">  <div class="field">
+    <%= form.label "Blood Type" %>
     <%= form.text_field :bloodType %>
   </div>
-
-  <div class="field">
-    <%= form.label :patientName %>
+</th>
+      <th scope="col">  <div class="field">
+    <%= form.label "Patient Name" %>
     <%= form.text_field :patientName %>
   </div>
-
-<div class="field">
-    <%= form.label :bloodUnits %>
+</th>
+      <th scope="col"><div class="field">
+    <%= form.label "Blood Units Needed" %>
     <%= form.text_field :bloodUnits %>
   </div>
-
-<div class="field">
-    <%= form.label :duration %>
+</th>
+      <th scope="col"><div class="field">
+    <%= form.label "Duration needed at (days)" %>
     <%= form.text_field :duration %>
   </div>
+</th>
+    </tr>
+  </thead>
+
+</table>
+
+
+
+
+
 
 
 <%if user_signed_in?%>

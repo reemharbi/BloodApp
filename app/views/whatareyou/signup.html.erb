@@ -1,7 +1,11 @@
-<h1>Whatareyou#signup</h1>
-<p>Find me in app/views/whatareyou/signup.html.erb</p>
+  <div class="card text-center" style="width: 18rem;">
+  <div class="card-body">
+    <%= button_to "Sign up as Hospital", new_hospital_registration_path, :method => "get", :class => "btn btn-outline-success" %>
+  </div>
+</div>
 
-    <%= link_to 'Sign Up as User', new_user_registration_path %>
-  
-    <%= link_to 'Sign Up as Hospital', new_hospital_registration_path %>
-  
+<div class="card text-center" style="width: 18rem;">
+  <div class="card-body">
+    <%= button_to "Sign up as Individual", new_user_registration_path, :method => "get", :class => "btn btn-outline-info" %>
+  </div>
+</div>

@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  get 'whatareyou/login'
-  get 'whatareyou/signup'
+  root "posts#index"
   devise_for :hospitals
-
   devise_for :users
-
   resources :posts
-  # post "post/new", to: "post#new"
+
+  get "whatareyou/signup", to: "whatareyou#signup"
+  get "whatareyou/login", to: "whatareyou#login"
+
+  # get "posts/:fileNumber/edit", to: "posts#edit", as: :post_edit
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

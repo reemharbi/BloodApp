@@ -1,4 +1,27 @@
-<h1>Post#show</h1>
-<p>Find me in app/views/post/show.html.erb</p>
-<%= @post.fileNumber%>
-<%= @post.hospital_id%>
+<p id="notice"><%= notice %></p>
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Patient File Number</th>
+      <th scope="col">Blood Type</th>
+      <th scope="col">Patient Name</th>
+      <th scope="col">Blood Units Needed</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @post.fileNumber %></td>
+        <td><%= @post.bloodType %></td>
+        <td><%= @post.patientName %></td>
+        <td><%= @post.bloodUnits %></td>
+        </tr>
+      </tr>
+  </tbody>
+</table>
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

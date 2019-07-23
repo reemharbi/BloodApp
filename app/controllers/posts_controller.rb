@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+  before_action :set_post, only: [:edit, :update]
   # GET /posts
   # GET /posts.json
   def index
@@ -19,15 +19,16 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @post = Post.find(params[:id])
   end
 
   # POST /posts
   # POST /posts.json
   def create
     post = Post.create(post_params)
-    # debug
     if post
-      redirect_to post_path(post), notice: "Post was successfully created."
+      redirect_to posts_path
+      # redirect_to post_path(post)
     end
   end
 
@@ -36,7 +37,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to post_index_path, notice: "Post was successfully updated." }
+        format.html { redirect_to posts_path }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -48,11 +49,8 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post.destroy
-    respond_to do |format|
-      format.html { redirect_to post_index_path, notice: "Post was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    post = Post.find(params[:id]).destroy
+    redirect_to posts_path
   end
 
   private
