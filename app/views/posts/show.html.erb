@@ -4,9 +4,8 @@
       <th scope="col">Patient File Number</th>
       <th scope="col">Blood Type</th>
       <th scope="col">Patient Name</th>
-      <th scope="col">Blood Units Needed (ml)</th>
+      <th scope="col">Blood Units Needed</th>
       <th scope="col">Duration (days)</th>
-
     </tr>
   </thead>
 
@@ -23,4 +22,6 @@
 </table>
 
 
-<%= link_to 'Back', posts_path %>
+<div class="text-center" ><%= link_to "Donate!" , "/donate/#{@post.id}"%></div>
+
+<div class="text-center "> <%= link_to 'Back', posts_path %></div>

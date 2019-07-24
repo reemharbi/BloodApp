@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  get "about/index"
   root "posts#index"
   devise_for :hospitals
   devise_for :users
   resources :posts
 
+  get "/donate/:id", to: "posts#donate"
   get "whatareyou/signup", to: "whatareyou#signup"
   get "whatareyou/login", to: "whatareyou#login"
 

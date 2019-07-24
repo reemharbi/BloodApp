@@ -1,18 +1,71 @@
-<% @posts.each do |post| %>
+<body>
 
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h1 class="card-title"><%= post.bloodType %></h1>
-    <h6 class="card-subtitle mb-2 text-muted"> <%= Hospital.find(post.hospital_id).name%>, <%= Hospital.find(post.hospital_id).city%></h6>
-    <p class="card-text">File Number: <%= post.fileNumber %> </p>
-    <p class="card-text">Patient Name: <%= post.patientName %> </p>
-    <p class="card-text">Blood Units: <%= post.bloodUnits %> </p>
-    <p class="card-text">Post Duration: <%= post.duration %> </p>
-    <%= link_to 'Show', post, class: 'card-link' %>
-    <%if hospital_signed_in?%><%= link_to 'Delete', "/posts/#{post.id}", method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link' %><%end%>
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+      <h1 class="display-3">I vant your blood<%= image_tag 'https://s3.gifyu.com/images/blood-1s-200px.gif', size: "110x110" %></h1>
+      <p class="lead">This is a platform for all our blood-providing-heroes, a simple interface gives you access to all the oppurtunities available for you to save a life!</p>
+      <a class="btn btn-primary btn-lg" href="/about/index.html" role="button">Learn more</a>
+    </header>
+
+    <!-- Page Features -->
+    
+
+<div class="container"> 
+  <div class="row">
+      <% @posts.sort.reverse.each do |post| %>
+      <% progression = post.donations%>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+         <img class="card-img-top" src="https://s3.gifyu.com/images/blood-transfusion-1s-200px.gif" style="width:200px; height:200; margin-left: auto; margin-right: auto;" alt="">
+          <h1 class="card-title"><%= post.bloodType %></h1>
+          <h6 class="card-subtitle mb-2 text-muted"> <%= Hospital.find(post.hospital_id).name%>, <%= Hospital.find(post.hospital_id).city%></h6>
+          <p class="card-text">File Number: <%= post.fileNumber %> </p>
+          <p class="card-text">Patient Name: <%= post.patientName %> </p>
+          <p class="card-text">Blood Units: <%= post.bloodUnits %> </p>
+          <p class="card-text">Post Duration: <%= post.duration %> </p>
+<div
+  data-preset="bubble"
+  class="ldBar ldBar-label"
+  data-value="<%=(progression/post.bloodUnits) * 100%>"
+  data-pattern-size="64"
+  data-fill="https://s3.gifyu.com/images/output-1.gif"
+  style="width:150px;height:100px; margin-left: auto; margin-right: auto;"
+></div>
+          <p class="card-text"> <div class="progress">
+          <div class="progress-bar progress-bar progress-bar-animated bg-primary" role="progressbar" aria-valuenow="<%=(progression/post.bloodUnits) * 100%>" aria-valuemin="0" aria-valuemax="100" style="width: <%=(progression/post.bloodUnits) * 100%>%" ></div>
+      </div></p>
+      <div class="card-footer">
+            <div class="btn btn-outline-primary"><%= link_to 'Show', post, class: 'card-link' %></div>
+          </div>
+         <div class="text-center"> </div>
+          <%if hospital_signed_in?%><%= link_to 'Delete', "/posts/#{post.id}", method: :delete, data: { confirm: 'Are you sure?' }, class: 'card-link' %><%end%>
+        </div>
+      </div>
+            <% end %>
   </div>
 </div>
-      <% end %>
 
 
 
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Reem Blood Donation 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>

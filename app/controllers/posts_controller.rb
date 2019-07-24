@@ -2,8 +2,19 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update]
   # GET /posts
   # GET /posts.json
+
   def index
     @posts = Post.all
+  end
+
+  def donate
+    post = Post.find(params[:id])
+
+    post.donations += 1
+
+    post.save
+
+    redirect_to root_path
   end
 
   # GET /posts/1
@@ -20,6 +31,9 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+  end
+
+  def about
   end
 
   # POST /posts
