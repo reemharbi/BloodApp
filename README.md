@@ -53,5 +53,6 @@ The development process started with a wireframe.
 - https://wireframe.cc
 
 ---
-
-<h1>“Little things done with love are much better than big things without love.”</h1>
+<p align="center">
+  “Little things done with love are much better than big things without love.”
+</p
