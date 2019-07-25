@@ -1,4 +1,4 @@
-# Reem-AlHarbi-project-2
+# Reem-AlHarbi-project-2-Bloody-App
 
 <p align="center">
 <img src="https://s3.gifyu.com/images/heartbeat-1s-200px.gif" width=200 align=center>
