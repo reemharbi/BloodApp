@@ -27,16 +27,16 @@ This website was created as a part of the learning process at SEI-Eternitiy. The
 <img src="https://s3.gifyu.com/images/blood-1s-200px.gif" width=200 align=center>
 </p>
 <p align="center">
-<img src="https://cdn.arstechnica.net/wp-content/uploads/2013/05/donate_blood_rotator.jpg" width=200 align=center>
+<img src="https://cdn.arstechnica.net/wp-content/uploads/2013/05/donate_blood_rotator.jpg" align=center>
 </p>
 <p align="center">
-<img src="https://i.postimg.cc/nzGsYLnK/a72b068f55de6af3485c405efa404ef3-blood-drive-posters-blood-dona.jpg" width=200 align=center>
+<img src="https://i.postimg.cc/nzGsYLnK/a72b068f55de6af3485c405efa404ef3-blood-drive-posters-blood-dona.jpg" align=center>
 </p>
 <p align="center">
-<img src="https://i.postimg.cc/JnpPtpVL/49187820905828949.jpg" width=200 align=center>
+<img src="https://i.postimg.cc/JnpPtpVL/49187820905828949.jpg" align=center>
 </p>
 <p align="center">
-<img src="https://i.postimg.cc/0yfMgQTz/free-blood-drive-slogan-vector-poster.jpg" width=200 align=center>
+<img src="https://i.postimg.cc/0yfMgQTz/free-blood-drive-slogan-vector-poster.jpg" align=center>
 </p>
 
 #### Future Plans:
