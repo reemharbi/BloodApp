@@ -1,4 +1,4 @@
-# Reem-AlHarbi-project-2-Bloody-App
+# Reem-AlHarbi || Bloody-App
 
 <p align="center">
 <img src="https://s3.gifyu.com/images/heartbeat-1s-200px.gif" width=200 align=center>
@@ -6,7 +6,7 @@
 
 ## Motivation:
 
-This website was created as a part of the learning process at SEI-Eternitiy. The website if for blood donations requests and blood donators. It provides a platform for hospitals to submit blood donation requests for patients needing blood or due to low stock in blood bank. It also provides a destination to good-doers to be able to help and save a life.
+The website is focused on blood donations. It provides a platform for hospitals to submit blood donation requests for patients needing blood or due to low stock in blood bank. It also provides a destination to good-doers to be able to help and save a life.
 
 ---
 # Screenshots
@@ -119,4 +119,9 @@ All you need is:
 ---
 <p align="center">
   “Little things done with love are much better than big things without love.”
-</p
+</p>
+
+
+<p align="center">
+This website was created as a part of the learning process at SEI-Eternitiy.
+</p>
